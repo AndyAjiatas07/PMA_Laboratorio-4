@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background: linear-gradient(to right, #007bff, #00aaff);
+}
+
+.card-title {
+    color: #007bff;
+}
+
+pre code {
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    overflow-x: auto;
+}
