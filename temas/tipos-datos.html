@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducción a JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">JSpedia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTema" aria-controls="menuTema" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuTema">
+                <ul class="navbar-nav ms-auto fs-6">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tipos-datos.html">Tipos de Datos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <!-- Contenido principal -->
+        <main class="col-lg-8">
+          <h1 class="mb-4 text-primary fw-bold">Tipos de Datos en JavaScript</h1>
+
+          <img src="../img/1.png" alt="Imagen de Introducción a JavaScript" class="img-fluid rounded shadow mb-4 tema-img" loading="lazy" />
+
+          <article class="mb-4 fs-5 lh-lg">
+
+<section class="mb-5 fs-5 lh-lg">
+  <p>JavaScript es un lenguaje de tipado dinámico y débil, lo que significa que no tienes que declarar explícitamente el tipo de dato de una variable y que los tipos pueden cambiar en tiempo de ejecución.</p>
+  <p>Los tipos de datos en JavaScript se dividen principalmente en primitivos y objetos. Entender estos tipos y sus comportamientos es crucial para evitar errores y escribir código eficiente.</p>
+
+  <h5 class="mt-4">1. Tipos Primitivos</h5>
+  <p>Los tipos primitivos almacenan datos simples y son inmutables. JavaScript tiene 7 tipos primitivos:</p>
+
+  <h6>a) Number (Números)</h6>
+  <p>Representa tanto números enteros como flotantes. Internamente, JavaScript usa el estándar IEEE 754 de doble precisión para almacenar números.</p>
+  <pre><code class="language-js">let entero = 42;
+let decimal = 3.14;
+let negativo = -10;</code></pre>
+  <p>No existe un tipo separado para enteros o decimales.</p>
+  <p>Soporta valores especiales: <code>Infinity</code>, <code>-Infinity</code>, y <code>NaN</code> (Not a Number).</p>
+  <pre><code class="language-js">console.log(1 / 0);       // Infinity
+console.log("a" * 3);     // NaN</code></pre>
+
+  <h6>b) String (Cadenas de texto)</h6>
+  <p>Secuencia de caracteres Unicode. Se pueden definir con comillas simples, dobles o backticks (plantillas literales).</p>
+  <pre><code class="language-js">let saludo = "Hola";
+let nombre = 'Andy';
+let frase = `Hola, ${nombre}`;  // Template string</code></pre>
+  <p>Los strings son inmutables, no puedes cambiar un carácter directamente.</p>
+
+  <h6>c) Boolean (Booleanos)</h6>
+  <p>Solo tiene dos valores posibles: <code>true</code> o <code>false</code>. Usado en lógica y control de flujo.</p>
+  <pre><code class="language-js">let esMayor = true;
+let tieneAcceso = false;</code></pre>
+
+  <h6>d) Undefined</h6>
+  <p>Es un valor especial que indica que una variable ha sido declarada pero no inicializada.</p>
+  <pre><code class="language-js">let x;
+console.log(x);  // undefined</code></pre>
+
+  <h6>e) Null</h6>
+  <p>Representa la ausencia intencional de cualquier valor u objeto.</p>
+  <pre><code class="language-js">let y = null;
+console.log(y);  // null</code></pre>
+  <p><code>null</code> y <code>undefined</code> son diferentes aunque ambos representan “nada”.</p>
+
+  <h6>f) Symbol (Introducido en ES6)</h6>
+  <p>Un valor único e inmutable usado principalmente para propiedades de objetos que no colisionen.</p>
+  <pre><code class="language-js">let sym1 = Symbol('id');
+let sym2 = Symbol('id');
+console.log(sym1 === sym2);  // false, son únicos</code></pre>
+
+  <h6>g) BigInt (Introducido en ES2020)</h6>
+  <p>Permite manejar enteros muy grandes, fuera del rango seguro de Number.</p>
+  <pre><code class="language-js">let big = 9007199254740991n;  // Nota la "n" al final
+console.log(typeof big);      // "bigint"</code></pre>
+
+  <h5 class="mt-4">2. Tipos de Datos de Objeto</h5>
+  <p>Los objetos pueden almacenar colecciones de datos y funcionalidades. No tienen un tamaño fijo y son mutables.</p>
+
+  <h6>a) Object (Objeto Literal)</h6>
+  <p>Colección de pares clave-valor.</p>
+  <pre><code class="language-js">let persona = {
+  nombre: "Andy",
+  edad: 25,
+  activo: true
+};</code></pre>
+  <p>Puedes acceder o modificar propiedades:</p>
+  <pre><code class="language-js">console.log(persona.nombre);  // Andy
+persona.edad = 26;</code></pre>
+
+  <h6>b) Array (Arreglos)</h6>
+  <p>Lista ordenada de valores, indexados desde 0.</p>
+  <pre><code class="language-js">let numeros = [1, 2, 3, 4];
+console.log(numeros[2]);  // 3</code></pre>
+  <p>Arrays son objetos especiales con métodos propios (<code>push</code>, <code>pop</code>, <code>map</code>, <code>filter</code>, etc.).</p>
+
+  <h6>c) Function (Funciones)</h6>
+  <p>En JavaScript las funciones son objetos de primera clase.</p>
+  <pre><code class="language-js">function saludar() {
+  console.log("Hola");
+}</code></pre>
+
+  <h6>d) Date, RegExp, Map, Set, WeakMap, WeakSet, etc.</h6>
+  <p>JavaScript también tiene tipos de objetos especializados para manejar fechas, expresiones regulares, colecciones únicas, etc.</p>
+  <pre><code class="language-js">let fecha = new Date();
+let regex = /abc/gi;
+let conjunto = new Set([1, 2, 3]);</code></pre>
+
+  <h5 class="mt-4">3. Tipos Dinámicos y Conversiones Implícitas</h5>
+  <p>JavaScript permite cambiar el tipo de una variable en cualquier momento:</p>
+  <pre><code class="language-js">let dato = "10";   // string
+dato = 10;         // ahora number</code></pre>
+  <p>Conversiones automáticas (coerción):</p>
+  <p>JavaScript a menudo convierte tipos automáticamente, lo que puede causar confusión:</p>
+  <pre><code class="language-js">console.log("5" + 1);    // "51" (concatenación)
+console.log("5" - 1);    // 4 (conversión a número)</code></pre>
+
+  <h5 class="mt-4">4. typeof — Para identificar tipos</h5>
+  <p>El operador <code>typeof</code> devuelve una cadena con el tipo del dato.</p>
+  <pre><code class="language-js">typeof 42;           // "number"
+typeof "texto";        // "string"
+typeof true;           // "boolean"
+typeof undefined;      // "undefined"
+typeof null;           // "object" (bug histórico)
+typeof Symbol();       // "symbol"
+typeof 10n;            // "bigint"
+typeof {};             // "object"
+typeof [];             // "object"
+typeof function(){};   // "function"</code></pre>
+  <p><strong>Nota importante:</strong> <code>typeof null</code> devuelve "object", que es un error histórico en JS.</p>
+
+  <h5 class="mt-4">5. Valores Falsos (Falsy values)</h5>
+  <p>En contextos booleanos, estos valores se consideran false:</p>
+  <ul>
+    <li>false</li>
+    <li>0</li>
+    <li>"" (cadena vacía)</li>
+    <li>null</li>
+    <li>undefined</li>
+    <li>NaN</li>
+  </ul>
+  <p>Todo lo demás es considerado true.</p>
+  <pre><code class="language-js">if (!0) console.log("0 es falso");  // se imprime</code></pre>
+
+  <h5 class="mt-4">6. Inmutabilidad y Mutabilidad</h5>
+  <p>Primitivos son inmutables: no puedes cambiar su valor directamente, sólo reasignar la variable.</p>
+  <p>Objetos son mutables: puedes cambiar sus propiedades o elementos.</p>
+  <pre><code class="language-js">let a = "hola";
+a[0] = "H";  // No cambia nada, strings son inmutables
+
+let obj = {nombre: "Andy"};
+obj.nombre = "Pedro";  // sí cambia</code></pre>
+
+  <h5 class="mt-4">7. Ejemplos prácticos de tipos y comportamiento</h5>
+  <pre><code class="language-js">// Primitivos
+let n = 10;
+let s = "texto";
+let b = true;
+let u;
+let nl = null;
+let sym = Symbol("id");
+let bigInt = 9007199254740991n;
+
+// Objetos
+let obj = {a: 1, b: 2};
+let arr = [1, 2, 3];
+let fn = function() { return "función"; };
+
+// typeof
+console.log(typeof n);       // number
+console.log(typeof sym);     // symbol
+console.log(typeof obj);     // object
+console.log(typeof fn);      // function
+
+// Coerción implícita
+console.log("5" + 2);  // "52"
+console.log("5" * 2);  // 10
+</code></pre>
+
+  <h5 class="mt-4">Resumen</h5>
+  <table class="table table-striped table-bordered">
+    <thead class="table-primary">
+      <tr>
+        <th>Tipo Primitivo</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Number</td>
+        <td>Números enteros y decimales</td>
+        <td>123, 3.14, NaN</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Texto</td>
+        <td>"Hola", 'Mundo'</td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>true o false</td>
+        <td>true, false</td>
+      </tr>
+      <tr>
+        <td>Undefined</td>
+        <td>Variable no inicializada</td>
+        <td>undefined</td>
+      </tr>
+      <tr>
+        <td>Null</td>
+        <td>Valor nulo</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>Symbol</td>
+        <td>Identificadores únicos</td>
+        <td>Symbol('id')</td>
+      </tr>
+      <tr>
+        <td>BigInt</td>
+        <td>Números enteros muy grandes</td>
+        <td>9007199254740991n</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped table-bordered mt-4">
+    <thead class="table-primary">
+      <tr>
+        <th>Tipo Objeto</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Object</td>
+        <td>Colección clave-valor</td>
+        <td>{nombre: "Andy"}</td>
+      </tr>
+      <tr>
+        <td>Array</td>
+        <td>Lista indexada</td>
+        <td>[1, 2, 3]</td>
+      </tr>
+      <tr>
+        <td>Function</td>
+        <td>Función (objeto invocable)</td>
+        <td>function() {}</td>
+      </tr>
+      <tr>
+        <td>Otros</td>
+        <td>Date, RegExp, Map, Set, etc.</td>
+        <td>new Date(), /abc/</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<a href="../index.html" class="btn btn-outline-primary mt-3">← Volver al Inicio</a>
+          </article>
+        </main>
+
+        <!-- Menú lateral de navegación a temas -->
+        <nav class="col-lg-4 mt-4 mt-lg-0 ps-lg-4 border-start">
+          <h5 class="text-primary mb-3">Temas</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="introduccion.html" class="text-decoration-none text-dark">Introducción</a></li>
+            <li class="list-group-item"><a href="sintaxis.html" class="text-decoration-none text-dark">Sintaxis Básica</a></li>
+            <li class="list-group-item"><a href="tipos-datos.html" class="text-decoration-none fw-semibold text-primary">Tipos de Datos</a></li>
+            <li class="list-group-item"><a href="variables.html" class="text-decoration-none text-dark">Variables y Constantes</a></li>
+            <li class="list-group-item"><a href="operadores.html" class="text-decoration-none text-dark">Operadores</a></li>
+            <li class="list-group-item"><a href="condicionales.html" class="text-decoration-none text-dark">Condicionales</a></li>
+            <li class="list-group-item"><a href="bucles.html" class="text-decoration-none text-dark">Bucles</a></li>
+            <li class="list-group-item"><a href="funciones.html" class="text-decoration-none text-dark">Funciones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

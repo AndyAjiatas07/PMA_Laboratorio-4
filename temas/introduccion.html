@@ -1,29 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Introducción a JavaScript</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">JSpedia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTema" aria-controls="menuTema" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuTema">
+                <ul class="navbar-nav ms-auto fs-6">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="introduccion.html">Introducción</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container my-5">
-        <h1 class="mb-4">Introducción a JavaScript</h1>
+      <div class="row">
+        <!-- Contenido principal -->
+        <main class="col-lg-8">
+          <h1 class="mb-4 text-primary fw-bold">Introducción a JavaScript</h1>
 
-        <!-- Imagen del tema -->
-        <img src="../img/ejemplo1.jpg" alt="Imagen de Introducción a JavaScript" class="img-fluid rounded mb-4">
+          <img src="../img/1.png" alt="Imagen de Introducción a JavaScript" class="img-fluid rounded shadow mb-4 tema-img" loading="lazy" />
 
-        <!-- Contenido -->
-        <p>Aquí va la descripción del tema...</p>
+          <article class="mb-4 fs-5 lh-lg">
+    <p><strong>JavaScript</strong> es un lenguaje de programación interpretado, orientado a objetos y basado en prototipos. Fue creado en 1995 por Brendan Eich y se ha convertido en uno de los pilares del desarrollo web junto con HTML y CSS. Se ejecuta principalmente en el navegador del usuario (lado del cliente), aunque también puede ejecutarse en el servidor con entornos como <code>Node.js</code>.</p>
 
-        <h3>Ejemplo de código:</h3>
-        <pre><code>
-// Esto es un comentario en JavaScript
-console.log("Hola Mundo");
-        </code></pre>
+    <h5 class="mt-4">1. Características principales</h5>
+    <ul>
+        <li>Lenguaje de tipado débil y dinámico.</li>
+        <li>Basado en prototipos, no en clases tradicionales (aunque desde ES6 soporta sintaxis de clases).</li>
+        <li>Interpretado: el navegador lo ejecuta directamente sin compilación previa.</li>
+        <li>Multiparadigma: permite programación imperativa, funcional y orientada a objetos.</li>
+        <li>Alto nivel: maneja automáticamente aspectos como la gestión de memoria.</li>
+    </ul>
 
-        <a href="../index.html" class="btn btn-secondary mt-3">Volver</a>
+    <h5 class="mt-4">2. Usos comunes</h5>
+    <ul>
+        <li>Manipular y modificar el DOM (Document Object Model).</li>
+        <li>Validar formularios antes de enviarlos al servidor.</li>
+        <li>Crear interfaces interactivas y dinámicas.</li>
+        <li>Consumir APIs mediante <code>AJAX</code> o <code>fetch()</code>.</li>
+        <li>Desarrollar aplicaciones completas (Full Stack con Node.js).</li>
+    </ul>
+
+    <h5 class="mt-4">3. Estructura básica</h5>
+    <p>El código JavaScript puede incluirse de tres formas:</p>
+    <ul>
+        <li>En línea (atributo <code>onclick</code>, <code>onchange</code>, etc.).</li>
+        <li>Interno (dentro de <code>&lt;script&gt;</code> en el HTML).</li>
+        <li>Externo (archivo <code>.js</code> enlazado con <code>&lt;script src="archivo.js"&gt;&lt;/script&gt;</code>).</li>
+    </ul>
+
+    <p><strong>Ejemplo básico:</strong></p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Ejemplo JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="titulo"&gt;Hola Mundo&lt;/h1&gt;
+  &lt;button onclick="cambiarTexto()"&gt;Cambiar texto&lt;/button&gt;
+
+  &lt;script&gt;
+    function cambiarTexto() {
+      document.getElementById("titulo").innerHTML = "Texto modificado con JavaScript";
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</article>
+<section class="mb-5 fs-5 lh-lg">
+    <h5 class="mt-4">4. Sintaxis básica</h5>
+    <p><strong>Variables:</strong></p>
+    <pre><code class="language-js">var nombre = "Juan";  // Forma antigua
+let edad = 25;         // Variable de alcance de bloque
+const PI = 3.1416;     // Constante</code></pre>
+
+    <p><strong>Tipos de datos:</strong></p>
+    <ul>
+        <li><strong>Primitivos:</strong> string, number, boolean, null, undefined, symbol, bigint.</li>
+        <li><strong>Objetos:</strong> arrays, funciones, objetos literales, etc.</li>
+    </ul>
+
+    <p><strong>Operadores:</strong> Aritméticos (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>), de asignación (<code>=</code>, <code>+=</code>, <code>-=</code>), de comparación (<code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>), lógicos (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>).</p>
+
+    <h5 class="mt-4">5. Estructuras de control</h5>
+    <pre><code class="language-js">let edad = 20;
+
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+let contador = 0;
+while (contador < 3) {
+    console.log("Contador: " + contador);
+    contador++;
+}</code></pre>
+
+    <h5 class="mt-4">6. Funciones</h5>
+    <pre><code class="language-js">// Declaración
+function saludar(nombre) {
+    return "Hola, " + nombre;
+}
+
+// Expresión
+const despedir = function(nombre) {
+    return "Adiós, " + nombre;
+};
+
+// Flecha (Arrow Function)
+const multiplicar = (a, b) => a * b;
+
+console.log(saludar("Ana"));
+console.log(despedir("Luis"));
+console.log(multiplicar(4, 5));</code></pre>
+
+    <h5 class="mt-4">7. Manipulación del DOM</h5>
+    <pre><code class="language-js">document.querySelector("h1").style.color = "blue";
+document.querySelector("button").addEventListener("click", () => {
+    alert("Botón presionado");
+});</code></pre>
+
+    <h5 class="mt-4">8. Ejemplo práctico interactivo</h5>
+    <div class="card p-3 shadow-sm">
+        <h6>Calculadora Simple</h6>
+        <input type="number" id="num1" class="form-control mb-2" placeholder="Número 1">
+        <input type="number" id="num2" class="form-control mb-2" placeholder="Número 2">
+        <button class="btn btn-success mb-2" onclick="sumar()">Sumar</button>
+        <p id="resultado" class="fw-bold text-primary"></p>
     </div>
+
+    <script>
+        function sumar() {
+            let n1 = parseFloat(document.getElementById("num1").value) || 0;
+            let n2 = parseFloat(document.getElementById("num2").value) || 0;
+            document.getElementById("resultado").innerText = "Resultado: " + (n1 + n2);
+        }
+    </script>
+</section>
+
+
+          <a href="../index.html" class="btn btn-outline-primary mt-3">← Volver al Inicio</a>
+        </main>
+
+        <!-- Menú lateral de navegación a temas -->
+        <nav class="col-lg-4 mt-4 mt-lg-0 ps-lg-4 border-start">
+          <h5 class="text-primary mb-3">Temas</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="introduccion.html" class="text-decoration-none fw-semibold text-primary">Introducción</a></li>
+            <li class="list-group-item"><a href="sintaxis.html" class="text-decoration-none text-dark">Sintaxis Básica</a></li>
+            <li class="list-group-item"><a href="tipos-datos.html" class="text-decoration-none text-dark">Tipos de Datos</a></li>
+            <li class="list-group-item"><a href="variables.html" class="text-decoration-none text-dark">Variables y Constantes</a></li>
+            <li class="list-group-item"><a href="operadores.html" class="text-decoration-none text-dark">Operadores</a></li>
+            <li class="list-group-item"><a href="condicionales.html" class="text-decoration-none text-dark">Condicionales</a></li>
+            <li class="list-group-item"><a href="bucles.html" class="text-decoration-none text-dark">Bucles</a></li>
+            <li class="list-group-item"><a href="funciones.html" class="text-decoration-none text-dark">Funciones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script>
+      function sumar() {
+        let n1 = parseFloat(document.getElementById("num1").value) || 0;
+        let n2 = parseFloat(document.getElementById("num2").value) || 0;
+        document.getElementById("resultado").innerText = "Resultado: " + (n1 + n2);
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducción a JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">JSpedia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTema" aria-controls="menuTema" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuTema">
+                <ul class="navbar-nav ms-auto fs-6">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sintaxis.html">Sintaxis Básica</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <!-- Contenido principal -->
+        <main class="col-lg-8">
+          <h1 class="mb-4 text-primary fw-bold">Sintaxis Básica de JavaScript</h1>
+
+          <img src="../img/1.png" alt="Imagen de Introducción a JavaScript" class="img-fluid rounded shadow mb-4 tema-img" loading="lazy" />
+
+          <article class="mb-4 fs-5 lh-lg">
+
+<section class="mb-5 fs-5 lh-lg">
+    <p>JavaScript es un lenguaje de programación interpretado, orientado a objetos y basado en prototipos, usado principalmente para hacer páginas web interactivas. Su sintaxis básica es sencilla, pero poderosa, y entenderla bien es clave para programar con eficacia.</p>
+
+    <h5 class="mt-4">1. Comentarios</h5>
+    <p>Los comentarios son líneas que el navegador ignora y que sirven para explicar el código o dejar anotaciones.</p>
+    <p><strong>Comentario de una línea:</strong></p>
+    <pre><code class="language-js">// Esto es un comentario de una sola línea</code></pre>
+
+    <p><strong>Comentario de varias líneas:</strong></p>
+    <pre><code class="language-js">/*
+  Esto es un comentario
+  que puede ocupar varias líneas
+*/</code></pre>
+
+    <h5 class="mt-4">2. Declaración de Variables</h5>
+    <p>En JavaScript existen tres palabras clave para declarar variables: <code>var</code>, <code>let</code> y <code>const</code>.</p>
+    <ul>
+        <li><code>var</code>: variable con alcance global o de función.</li>
+        <li><code>let</code>: variable con alcance de bloque (recomendado para la mayoría de casos).</li>
+        <li><code>const</code>: variable constante, no puede reasignarse.</li>
+    </ul>
+    <pre><code class="language-js">var nombre = "Andy";   // variable vieja, evitar si es posible
+let edad = 25;         // variable que puede cambiar
+const PI = 3.1416;     // constante, no cambia</code></pre>
+
+    <h5 class="mt-4">3. Tipos de Datos</h5>
+    <p>JavaScript maneja varios tipos de datos:</p>
+    <ul>
+        <li><strong>Primitivos:</strong> number (números), string (texto), boolean (true/false), null, undefined, symbol.</li>
+        <li><strong>Objetos:</strong> estructuras más complejas, como arrays, funciones, objetos literales.</li>
+    </ul>
+    <pre><code class="language-js">let numero = 10;               // number
+let texto = "Hola Mundo";      // string
+let activo = true;             // boolean
+let valorNulo = null;          // null
+let indefinido;                // undefined</code></pre>
+
+    <h5 class="mt-4">4. Operadores</h5>
+    <p>
+      <strong>Aritméticos:</strong> +, -, *, /, %<br />
+      <strong>Asignación:</strong> =, +=, -=, etc.<br />
+      <strong>Comparación:</strong> == (igualdad abstracta), === (igualdad estricta), !=, !==, &lt;, &gt;<br />
+      <strong>Lógicos:</strong> &amp;&amp; (AND), || (OR), ! (NOT)
+    </p>
+    <pre><code class="language-js">let x = 5;
+x += 3;      // x = 8
+console.log(x === 8);  // true</code></pre>
+
+    <h5 class="mt-4">5. Estructuras de Control</h5>
+
+    <h6>a) Condicionales</h6>
+    <pre><code class="language-js">if (edad >= 18) {
+  console.log("Eres mayor de edad");
+} else if (edad < 18 && edad > 0) {
+  console.log("Eres menor de edad");
+} else {
+  console.log("Edad inválida");
+}</code></pre>
+
+    <p>También existe el <code>switch</code> para múltiples casos:</p>
+    <pre><code class="language-js">switch(dia) {
+  case 1:
+    console.log("Lunes");
+    break;
+  case 2:
+    console.log("Martes");
+    break;
+  default:
+    console.log("Otro día");
+}</code></pre>
+
+    <h6>b) Bucles</h6>
+    <p><strong>For</strong></p>
+    <pre><code class="language-js">for(let i = 0; i < 5; i++) {
+  console.log(i);
+}</code></pre>
+
+    <p><strong>While</strong></p>
+    <pre><code class="language-js">let i = 0;
+while(i < 5) {
+  console.log(i);
+  i++;
+}</code></pre>
+
+    <p><strong>Do...while</strong></p>
+    <pre><code class="language-js">let i = 0;
+do {
+  console.log(i);
+  i++;
+} while(i < 5);</code></pre>
+
+    <h5 class="mt-4">6. Funciones</h5>
+    <p>Las funciones son bloques de código reutilizables. Pueden definirse de varias formas.</p>
+
+    <p><strong>Declaración tradicional:</strong></p>
+    <pre><code class="language-js">function saludar(nombre) {
+  return `Hola, ${nombre}`;
+}</code></pre>
+
+    <p><strong>Función anónima asignada a variable:</strong></p>
+    <pre><code class="language-js">const sumar = function(a, b) {
+  return a + b;
+};</code></pre>
+
+    <p><strong>Función flecha (más moderna):</strong></p>
+    <pre><code class="language-js">const multiplicar = (a, b) => a * b;</code></pre>
+
+    <h5 class="mt-4">7. Objetos</h5>
+    <p>Los objetos agrupan propiedades y métodos.</p>
+    <pre><code class="language-js">let persona = {
+  nombre: "Andy",
+  edad: 25,
+  saludar: function() {
+    console.log(`Hola, soy ${this.nombre}`);
+  }
+};
+
+persona.saludar();  // Hola, soy Andy</code></pre>
+
+    <h5 class="mt-4">8. Arrays</h5>
+    <p>Arreglos para almacenar colecciones de datos.</p>
+    <pre><code class="language-js">let numeros = [1, 2, 3, 4, 5];
+console.log(numeros[0]); // 1
+
+// Recorrer array
+for(let num of numeros) {
+  console.log(num);
+}</code></pre>
+
+    <h5 class="mt-4">9. Eventos</h5>
+    <p>En el contexto web, JavaScript responde a eventos, como clicks o cargas.</p>
+    <pre><code class="language-js">document.getElementById("miBoton").addEventListener("click", function() {
+  alert("Botón presionado");
+});</code></pre>
+
+    <h5 class="mt-4">10. Buenas prácticas de sintaxis</h5>
+    <ul>
+      <li>Usa <code>let</code> y <code>const</code> en lugar de <code>var</code>.</li>
+      <li>Usa punto y coma <code>;</code> para terminar instrucciones (aunque es opcional, previene errores).</li>
+      <li>Nombres descriptivos y camelCase para variables y funciones.</li>
+      <li>Usa plantillas literales <code>`texto ${variable}`</code> para concatenar texto.</li>
+      <li>Mantén la indentación y estructura clara.</li>
+    </ul>
+
+    <h5 class="mt-4">Ejemplo completo básico</h5>
+    <pre><code class="language-js">// Declaración de variables
+const nombre = "Andy";
+let edad = 25;
+
+// Función para verificar mayoría de edad
+function esMayorDeEdad(edad) {
+  if (edad >= 18) {
+    return true;
+  }
+  return false;
+}
+
+// Uso de función
+if (esMayorDeEdad(edad)) {
+  console.log(`${nombre} es mayor de edad.`);
+} else {
+  console.log(`${nombre} es menor de edad.`);
+}</code></pre>
+
+    <h5 class="mt-4">Resumen rápido</h5>
+    <table class="table table-striped table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th>Concepto</th>
+          <th>Sintaxis ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Comentario</td>
+          <td><code>// comentario</code></td>
+        </tr>
+        <tr>
+          <td>Variable</td>
+          <td><code>let x = 10;</code></td>
+        </tr>
+        <tr>
+          <td>Función</td>
+          <td><code>function foo() { ... }</code></td>
+        </tr>
+        <tr>
+          <td>Condicional</td>
+          <td><code>if (x > 5) { ... } else { ... }</code></td>
+        </tr>
+        <tr>
+          <td>Bucle</td>
+          <td><code>for(let i=0; i&lt;5; i++) { ... }</code></td>
+        </tr>
+        <tr>
+          <td>Objeto</td>
+          <td><code>let obj = { clave: valor }</code></td>
+        </tr>
+        <tr>
+          <td>Array</td>
+          <td><code>let arr = [1,2,3]</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+</section>
+
+          <a href="../index.html" class="btn btn-outline-primary mt-3">← Volver al Inicio</a>
+        </main>
+
+        <!-- Menú lateral de navegación a temas -->
+        <nav class="col-lg-4 mt-4 mt-lg-0 ps-lg-4 border-start">
+          <h5 class="text-primary mb-3">Temas</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="introduccion.html" class="text-decoration-none text-dark">Introducción</a></li>
+            <li class="list-group-item"><a href="sintaxis.html" class="text-decoration-none fw-semibold text-primary">Sintaxis Básica</a></li>
+            <li class="list-group-item"><a href="tipos-datos.html" class="text-decoration-none text-dark">Tipos de Datos</a></li>
+            <li class="list-group-item"><a href="variables.html" class="text-decoration-none text-dark">Variables y Constantes</a></li>
+            <li class="list-group-item"><a href="operadores.html" class="text-decoration-none text-dark">Operadores</a></li>
+            <li class="list-group-item"><a href="condicionales.html" class="text-decoration-none text-dark">Condicionales</a></li>
+            <li class="list-group-item"><a href="bucles.html" class="text-decoration-none text-dark">Bucles</a></li>
+            <li class="list-group-item"><a href="funciones.html" class="text-decoration-none text-dark">Funciones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
