@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="../img/1.png" type="image/x-icon" />
+    <link rel="icon" href="../img/1.png" type="image/x-icon" />
     <title>Condicionales en JavaScript</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link href="../css/style.css" rel="stylesheet" />
     <style>
       pre code {
@@ -17,85 +20,128 @@
         font-size: 0.9rem;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">JSpedia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTema" aria-controls="menuTema" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuTema">
-                <ul class="navbar-nav ms-auto fs-6">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="condicionales.html">Condicionales</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">JSpedia</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuTema"
+          aria-controls="menuTema"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuTema">
+          <ul class="navbar-nav ms-auto fs-6">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="condicionales.html"
+                >Condicionales</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="container my-5">
       <div class="row">
-        <!-- Contenido principal -->
         <main class="col-lg-8">
           <h1 class="mb-4 text-primary fw-bold">Condicionales en JavaScript</h1>
-                    <img src="../img/6.png" class="card-img-top" alt="Condicionales">
-
+          <img src="../img/6.png" class="card-img-top" alt="Condicionales" />
 
           <article class="mb-4 fs-5 lh-lg">
+            <section class="mb-5 fs-5 lh-lg">
+              <p>
+                Las estructuras condicionales son mecanismos que permiten
+                controlar el flujo de ejecución de un programa en función del
+                cumplimiento o no de ciertas condiciones. Gracias a ellas, un
+                programa puede tomar decisiones y ejecutar diferentes acciones
+                según distintos escenarios o entradas, haciendo que el
+                comportamiento sea flexible y adaptativo.
+              </p>
+              <h5 class="mt-4">1. Conceptos Clave</h5>
+              <p>
+                Una condición es una expresión que se evalúa como verdadera
+                (<code>true</code>) o falsa (<code>false</code>).
+              </p>
 
-<section class="mb-5 fs-5 lh-lg">
-<p>
-Las estructuras condicionales son mecanismos que permiten controlar el flujo de ejecución de un programa en función del cumplimiento o no de ciertas condiciones. Gracias a ellas, un programa puede tomar decisiones y ejecutar diferentes acciones según distintos escenarios o entradas, haciendo que el comportamiento sea flexible y adaptativo.
-</p>
-  <h5 class="mt-4">1. Conceptos Clave</h5>
-  <p>Una condición es una expresión que se evalúa como verdadera (<code>true</code>) o falsa (<code>false</code>).</p>
+              <p>
+                Se basan en operadores de comparación (<code
+                  >==, ===, !=, &lt;, &gt;, &lt;=, &gt;=</code
+                >) y operadores lógicos (<code>&&</code>, <code>||</code>,
+                <code>!</code>).
+              </p>
 
-  <p>Se basan en operadores de comparación (<code>==, ===, !=, &lt;, &gt;, &lt;=, &gt;=</code>) y operadores lógicos (<code>&&</code>, <code>||</code>, <code>!</code>).</p>
-
-  <p><strong>Valores falsy</strong> (considerados false de forma implícita):</p>
-  <pre><code>// Falsy values en JavaScript
+              <p>
+                <strong>Valores falsy</strong> (considerados false de forma
+                implícita):
+              </p>
+              <pre><code>// Falsy values en JavaScript
 false, 0, "", null, undefined, NaN</code></pre>
-  <p>Todo lo demás se considera <strong>truthy</strong>.</p>
+              <p>Todo lo demás se considera <strong>truthy</strong>.</p>
 
-  <h5 class="mt-4">2. Tipos de Condicionales en JavaScript</h5>
+              <h5 class="mt-4">2. Tipos de Condicionales en JavaScript</h5>
 
-  <h6 class="mt-3">2.1. <code>if</code></h6>
-  <p>Se usa para ejecutar un bloque de código solo si la condición es verdadera.</p>
-  <pre><code>if (condición) {
+              <h6 class="mt-3">2.1. <code>if</code></h6>
+              <p>
+                Se usa para ejecutar un bloque de código solo si la condición es
+                verdadera.
+              </p>
+              <pre><code>if (condición) {
   // Código que se ejecuta si la condición es verdadera
 }</code></pre>
 
-  <p><strong>Ejemplo:</strong></p>
-  <pre><code>let edad = 20;
+              <p><strong>Ejemplo:</strong></p>
+              <pre><code>let edad = 20;
 
 if (edad >= 18) {
   console.log("Eres mayor de edad");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: verificador de edad</strong>
-    <div class="row g-2 align-items-center mt-2">
-      <div class="col-auto">
-        <input id="edadInput" class="form-control form-control-sm" type="number" min="0" value="20">
-      </div>
-      <div class="col-auto">
-        <button id="btnCheckEdad" class="btn btn-sm btn-primary">Verificar</button>
-      </div>
-      <div class="col-12 mt-2">Resultado: <span id="edadResultado">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: verificador de edad</strong>
+                <div class="row g-2 align-items-center mt-2">
+                  <div class="col-auto">
+                    <input
+                      id="edadInput"
+                      class="form-control form-control-sm"
+                      type="number"
+                      min="0"
+                      value="20"
+                    />
+                  </div>
+                  <div class="col-auto">
+                    <button id="btnCheckEdad" class="btn btn-sm btn-primary">
+                      Verificar
+                    </button>
+                  </div>
+                  <div class="col-12 mt-2">
+                    Resultado: <span id="edadResultado">---</span>
+                  </div>
+                </div>
+              </div>
 
-  <h6 class="mt-3">2.2. <code>if...else</code></h6>
-  <p>Permite ejecutar un bloque si la condición es verdadera y otro bloque si es falsa.</p>
-  <pre><code>if (condición) {
+              <h6 class="mt-3">2.2. <code>if...else</code></h6>
+              <p>
+                Permite ejecutar un bloque si la condición es verdadera y otro
+                bloque si es falsa.
+              </p>
+              <pre><code>if (condición) {
   // Código si la condición es verdadera
 } else {
   // Código si la condición es falsa
 }</code></pre>
 
-  <p><strong>Ejemplo:</strong></p>
-  <pre><code>let esDia = false;
+              <p><strong>Ejemplo:</strong></p>
+              <pre><code>let esDia = false;
 
 if (esDia) {
   console.log("Buenos días");
@@ -103,18 +149,28 @@ if (esDia) {
   console.log("Buenas noches");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: día o noche</strong>
-    <div class="form-check form-switch mt-2">
-      <input class="form-check-input" type="checkbox" id="switchDia">
-      <label class="form-check-label" for="switchDia">Es de día</label>
-    </div>
-    <div class="mt-2">Salida: <span id="diaResultado">---</span></div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: día o noche</strong>
+                <div class="form-check form-switch mt-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="switchDia"
+                  />
+                  <label class="form-check-label" for="switchDia"
+                    >Es de día</label
+                  >
+                </div>
+                <div class="mt-2">
+                  Salida: <span id="diaResultado">---</span>
+                </div>
+              </div>
 
-  <h6 class="mt-3">2.3. <code>if...else if...else</code></h6>
-  <p>Se usa para evaluar múltiples condiciones de forma secuencial.</p>
-  <pre><code>if (condición1) {
+              <h6 class="mt-3">2.3. <code>if...else if...else</code></h6>
+              <p>
+                Se usa para evaluar múltiples condiciones de forma secuencial.
+              </p>
+              <pre><code>if (condición1) {
   // Bloque si condición1 es verdadera
 } else if (condición2) {
   // Bloque si condición2 es verdadera
@@ -122,8 +178,8 @@ if (esDia) {
   // Bloque si ninguna condición es verdadera
 }</code></pre>
 
-  <p><strong>Ejemplo:</strong></p>
-  <pre><code>let nota = 75;
+              <p><strong>Ejemplo:</strong></p>
+              <pre><code>let nota = 75;
 
 if (nota >= 90) {
   console.log("Excelente");
@@ -133,40 +189,63 @@ if (nota >= 90) {
   console.log("Reprobado");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: evaluación de nota</strong>
-    <div class="row g-2 align-items-center mt-2">
-      <div class="col-auto">
-        <input id="notaInput" class="form-control form-control-sm" type="number" min="0" max="100" value="75">
-      </div>
-      <div class="col-auto">
-        <button id="btnEvalNota" class="btn btn-sm btn-primary">Evaluar</button>
-      </div>
-      <div class="col-12 mt-2">Resultado: <span id="notaResultado">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: evaluación de nota</strong>
+                <div class="row g-2 align-items-center mt-2">
+                  <div class="col-auto">
+                    <input
+                      id="notaInput"
+                      class="form-control form-control-sm"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="75"
+                    />
+                  </div>
+                  <div class="col-auto">
+                    <button id="btnEvalNota" class="btn btn-sm btn-primary">
+                      Evaluar
+                    </button>
+                  </div>
+                  <div class="col-12 mt-2">
+                    Resultado: <span id="notaResultado">---</span>
+                  </div>
+                </div>
+              </div>
 
-  <h6 class="mt-3">2.4. Operador ternario (<code>?:</code>)</h6>
-  <p>Forma abreviada de escribir condicionales simples.</p>
-  <pre><code>condición ? valorSiVerdadero : valorSiFalso;</code></pre>
+              <h6 class="mt-3">2.4. Operador ternario (<code>?:</code>)</h6>
+              <p>Forma abreviada de escribir condicionales simples.</p>
+              <pre><code>condición ? valorSiVerdadero : valorSiFalso;</code></pre>
 
-  <p><strong>Ejemplo:</strong></p>
-  <pre><code>let edad2 = 17;
+              <p><strong>Ejemplo:</strong></p>
+              <pre><code>let edad2 = 17;
 let mensaje = edad2 >= 18 ? "Adulto" : "Menor";
 console.log(mensaje); // "Menor"</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: ternario</strong>
-    <div class="d-flex gap-2 align-items-center mt-2">
-      <input id="ternEdad" class="form-control form-control-sm" type="number" value="17" style="width:90px;">
-      <button id="btnTern" class="btn btn-sm btn-primary">Mostrar</button>
-      <div class="ms-2">Mensaje: <span id="ternMsg">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: ternario</strong>
+                <div class="d-flex gap-2 align-items-center mt-2">
+                  <input
+                    id="ternEdad"
+                    class="form-control form-control-sm"
+                    type="number"
+                    value="17"
+                    style="width: 90px"
+                  />
+                  <button id="btnTern" class="btn btn-sm btn-primary">
+                    Mostrar
+                  </button>
+                  <div class="ms-2">Mensaje: <span id="ternMsg">---</span></div>
+                </div>
+              </div>
 
-  <h6 class="mt-3">2.5. <code>switch</code></h6>
-  <p>Se usa para comparar un valor contra múltiples casos posibles. Recomendado cuando se comparan muchos valores de la misma variable.</p>
-  <pre><code>switch (expresión) {
+              <h6 class="mt-3">2.5. <code>switch</code></h6>
+              <p>
+                Se usa para comparar un valor contra múltiples casos posibles.
+                Recomendado cuando se comparan muchos valores de la misma
+                variable.
+              </p>
+              <pre><code>switch (expresión) {
   case valor1:
     // Código si expresión === valor1
     break;
@@ -177,8 +256,8 @@ console.log(mensaje); // "Menor"</code></pre>
     // Código si ningún caso coincide
 }</code></pre>
 
-  <p><strong>Ejemplo:</strong></p>
-  <pre><code>let dia = 3;
+              <p><strong>Ejemplo:</strong></p>
+              <pre><code>let dia = 3;
 
 switch (dia) {
   case 1:
@@ -194,22 +273,33 @@ switch (dia) {
     console.log("Día no válido");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: switch de días</strong>
-    <div class="row g-2 align-items-center mt-2">
-      <div class="col-auto">
-        <input id="diaInput" class="form-control form-control-sm" type="number" min="1" max="7" value="3">
-      </div>
-      <div class="col-auto">
-        <button id="btnSwitch" class="btn btn-sm btn-primary">Mostrar día</button>
-      </div>
-      <div class="col-12 mt-2">Resultado: <span id="switchResultado">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: switch de días</strong>
+                <div class="row g-2 align-items-center mt-2">
+                  <div class="col-auto">
+                    <input
+                      id="diaInput"
+                      class="form-control form-control-sm"
+                      type="number"
+                      min="1"
+                      max="7"
+                      value="3"
+                    />
+                  </div>
+                  <div class="col-auto">
+                    <button id="btnSwitch" class="btn btn-sm btn-primary">
+                      Mostrar día
+                    </button>
+                  </div>
+                  <div class="col-12 mt-2">
+                    Resultado: <span id="switchResultado">---</span>
+                  </div>
+                </div>
+              </div>
 
-  <h5 class="mt-4">3. Anidación de Condicionales</h5>
-  <p>Puedes colocar un condicional dentro de otro.</p>
-  <pre><code>let edad = 25;
+              <h5 class="mt-4">3. Anidación de Condicionales</h5>
+              <p>Puedes colocar un condicional dentro de otro.</p>
+              <pre><code>let edad = 25;
 let licencia = true;
 
 if (edad >= 18) {
@@ -222,31 +312,57 @@ if (edad >= 18) {
   console.log("Eres menor de edad");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: permiso de conducir</strong>
-    <div class="row g-2 align-items-center mt-2">
-      <div class="col-auto"><input id="edadConducir" class="form-control form-control-sm" type="number" value="25" min="0"></div>
-      <div class="col-auto" style="min-width:160px;">
-        <select id="tieneLic" class="form-select form-select-sm">
-          <option value="true">Tiene licencia</option>
-          <option value="false">No tiene licencia</option>
-        </select>
-      </div>
-      <div class="col-auto"><button id="btnConducir" class="btn btn-sm btn-primary">Comprobar</button></div>
-      <div class="col-12 mt-2">Resultado: <span id="conducirResultado">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: permiso de conducir</strong>
+                <div class="row g-2 align-items-center mt-2">
+                  <div class="col-auto">
+                    <input
+                      id="edadConducir"
+                      class="form-control form-control-sm"
+                      type="number"
+                      value="25"
+                      min="0"
+                    />
+                  </div>
+                  <div class="col-auto" style="min-width: 160px">
+                    <select id="tieneLic" class="form-select form-select-sm">
+                      <option value="true">Tiene licencia</option>
+                      <option value="false">No tiene licencia</option>
+                    </select>
+                  </div>
+                  <div class="col-auto">
+                    <button id="btnConducir" class="btn btn-sm btn-primary">
+                      Comprobar
+                    </button>
+                  </div>
+                  <div class="col-12 mt-2">
+                    Resultado: <span id="conducirResultado">---</span>
+                  </div>
+                </div>
+              </div>
 
-  <h5 class="mt-4">4. Buenas Prácticas</h5>
-  <ul>
-    <li>Evitar anidaciones profundas. Mejor separar en funciones o usar operadores lógicos.</li>
-    <li>Usar <code>===</code> en lugar de <code>==</code> para evitar conversiones de tipo inesperadas.</li>
-    <li>Operador ternario solo para condicionales simples; para lógica compleja, usar <code>if</code>.</li>
-    <li><code>switch</code> es más limpio que muchos <code>else if</code> cuando comparas el mismo valor.</li>
-  </ul>
+              <h5 class="mt-4">4. Buenas Prácticas</h5>
+              <ul>
+                <li>
+                  Evitar anidaciones profundas. Mejor separar en funciones o
+                  usar operadores lógicos.
+                </li>
+                <li>
+                  Usar <code>===</code> en lugar de <code>==</code> para evitar
+                  conversiones de tipo inesperadas.
+                </li>
+                <li>
+                  Operador ternario solo para condicionales simples; para lógica
+                  compleja, usar <code>if</code>.
+                </li>
+                <li>
+                  <code>switch</code> es más limpio que muchos
+                  <code>else if</code> cuando comparas el mismo valor.
+                </li>
+              </ul>
 
-  <h5 class="mt-4">5. Ejemplo Completo</h5>
-  <pre><code>let usuario = "admin";
+              <h5 class="mt-4">5. Ejemplo Completo</h5>
+              <pre><code>let usuario = "admin";
 let clave = "1234";
 
 if (usuario === "admin" && clave === "1234") {
@@ -257,34 +373,89 @@ if (usuario === "admin" && clave === "1234") {
   console.log("Usuario no válido");
 }</code></pre>
 
-  <div class="mb-3 p-3 border rounded bg-light">
-    <strong>Ejemplo interactivo: login básico</strong>
-    <div class="row g-2 mt-2">
-      <div class="col-6"><input id="loginUser" class="form-control form-control-sm" placeholder="Usuario" value="admin"></div>
-      <div class="col-6"><input id="loginPass" class="form-control form-control-sm" placeholder="Clave" value="1234" type="password"></div>
-      <div class="col-12 mt-2"><button id="btnLogin" class="btn btn-sm btn-primary">Iniciar sesión</button></div>
-      <div class="col-12 mt-2">Salida: <span id="loginResultado">---</span></div>
-    </div>
-  </div>
+              <div class="mb-3 p-3 border rounded bg-light">
+                <strong>Ejemplo interactivo: login básico</strong>
+                <div class="row g-2 mt-2">
+                  <div class="col-6">
+                    <input
+                      id="loginUser"
+                      class="form-control form-control-sm"
+                      placeholder="Usuario"
+                      value="admin"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      id="loginPass"
+                      class="form-control form-control-sm"
+                      placeholder="Clave"
+                      value="1234"
+                      type="password"
+                    />
+                  </div>
+                  <div class="col-12 mt-2">
+                    <button id="btnLogin" class="btn btn-sm btn-primary">
+                      Iniciar sesión
+                    </button>
+                  </div>
+                  <div class="col-12 mt-2">
+                    Salida: <span id="loginResultado">---</span>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-</section>
-
-<a href="../index.html" class="btn btn-outline-primary mt-3">← Volver al Inicio</a>
+            <a href="../index.html" class="btn btn-outline-primary mt-3"
+              >← Volver al Inicio</a
+            >
           </article>
         </main>
 
-        <!-- Menú lateral de navegación a temas -->
         <nav class="col-lg-4 mt-4 mt-lg-0 ps-lg-4 border-start">
           <h5 class="text-primary mb-3">Temas</h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="introduccion.html" class="text-decoration-none text-dark">Introducción</a></li>
-            <li class="list-group-item"><a href="sintaxis.html" class="text-decoration-none text-dark">Sintaxis Básica</a></li>
-            <li class="list-group-item"><a href="tipos-datos.html" class="text-decoration-none text-dark">Tipos de Datos</a></li>
-            <li class="list-group-item"><a href="variables.html" class="text-decoration-none text-dark">Variables y Constantes</a></li>
-            <li class="list-group-item"><a href="operadores.html" class="text-decoration-none text-dark">Operadores</a></li>
-            <li class="list-group-item"><a href="condicionales.html" class="text-decoration-none fw-semibold text-primary">Condicionales</a></li>
-            <li class="list-group-item"><a href="bucles.html" class="text-decoration-none text-dark">Bucles</a></li>
-            <li class="list-group-item"><a href="funciones.html" class="text-decoration-none text-dark">Funciones</a></li>
+            <li class="list-group-item">
+              <a href="introduccion.html" class="text-decoration-none text-dark"
+                >Introducción</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="sintaxis.html" class="text-decoration-none text-dark"
+                >Sintaxis Básica</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="tipos-datos.html" class="text-decoration-none text-dark"
+                >Tipos de Datos</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="variables.html" class="text-decoration-none text-dark"
+                >Variables y Constantes</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="operadores.html" class="text-decoration-none text-dark"
+                >Operadores</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a
+                href="condicionales.html"
+                class="text-decoration-none fw-semibold text-primary"
+                >Condicionales</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="bucles.html" class="text-decoration-none text-dark"
+                >Bucles</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="funciones.html" class="text-decoration-none text-dark"
+                >Funciones</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -292,98 +463,112 @@ if (usuario === "admin" && clave === "1234") {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Verificador de edad (if)
-      document.getElementById('btnCheckEdad').addEventListener('click', () => {
-        const edad = Number(document.getElementById('edadInput').value);
-        const out = document.getElementById('edadResultado');
+      document.getElementById("btnCheckEdad").addEventListener("click", () => {
+        const edad = Number(document.getElementById("edadInput").value);
+        const out = document.getElementById("edadResultado");
         if (Number.isNaN(edad)) {
-          out.textContent = 'Entrada inválida';
+          out.textContent = "Entrada inválida";
           return;
         }
-        out.textContent = edad >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad';
-        console.log('Verificador edad:', edad, out.textContent);
+        out.textContent =
+          edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
+        console.log("Verificador edad:", edad, out.textContent);
       });
 
-      // Día o noche (if...else)
-      document.getElementById('switchDia').addEventListener('change', () => {
-        const esDia = document.getElementById('switchDia').checked;
-        document.getElementById('diaResultado').textContent = esDia ? 'Buenos días' : 'Buenas noches';
-        console.log('Es día:', esDia);
+      document.getElementById("switchDia").addEventListener("change", () => {
+        const esDia = document.getElementById("switchDia").checked;
+        document.getElementById("diaResultado").textContent = esDia
+          ? "Buenos días"
+          : "Buenas noches";
+        console.log("Es día:", esDia);
       });
-      // inicializar estado
-      document.getElementById('diaResultado').textContent = document.getElementById('switchDia').checked ? 'Buenos días' : 'Buenas noches';
 
-      // Evaluación de nota (if...else if...else)
-      document.getElementById('btnEvalNota').addEventListener('click', () => {
-        const nota = Number(document.getElementById('notaInput').value);
-        const out = document.getElementById('notaResultado');
+      document.getElementById("diaResultado").textContent =
+        document.getElementById("switchDia").checked
+          ? "Buenos días"
+          : "Buenas noches";
+
+      document.getElementById("btnEvalNota").addEventListener("click", () => {
+        const nota = Number(document.getElementById("notaInput").value);
+        const out = document.getElementById("notaResultado");
         if (Number.isNaN(nota)) {
-          out.textContent = 'Entrada inválida';
+          out.textContent = "Entrada inválida";
           return;
         }
-        if (nota >= 90) out.textContent = 'Excelente';
-        else if (nota >= 70) out.textContent = 'Aprobado';
-        else out.textContent = 'Reprobado';
-        console.log('Nota:', nota, out.textContent);
+        if (nota >= 90) out.textContent = "Excelente";
+        else if (nota >= 70) out.textContent = "Aprobado";
+        else out.textContent = "Reprobado";
+        console.log("Nota:", nota, out.textContent);
       });
 
-      // Operador ternario demo
-      document.getElementById('btnTern').addEventListener('click', () => {
-        const edad = Number(document.getElementById('ternEdad').value);
-        const msg = (edad >= 18) ? 'Adulto' : 'Menor';
-        document.getElementById('ternMsg').textContent = msg;
-        console.log('Ternario:', edad, msg);
+      document.getElementById("btnTern").addEventListener("click", () => {
+        const edad = Number(document.getElementById("ternEdad").value);
+        const msg = edad >= 18 ? "Adulto" : "Menor";
+        document.getElementById("ternMsg").textContent = msg;
+        console.log("Ternario:", edad, msg);
       });
 
-      // Switch días
-      document.getElementById('btnSwitch').addEventListener('click', () => {
-        const dia = Number(document.getElementById('diaInput').value);
+      document.getElementById("btnSwitch").addEventListener("click", () => {
+        const dia = Number(document.getElementById("diaInput").value);
         let res;
         switch (dia) {
-          case 1: res = 'Lunes'; break;
-          case 2: res = 'Martes'; break;
-          case 3: res = 'Miércoles'; break;
-          case 4: res = 'Jueves'; break;
-          case 5: res = 'Viernes'; break;
-          case 6: res = 'Sábado'; break;
-          case 7: res = 'Domingo'; break;
-          default: res = 'Día no válido';
+          case 1:
+            res = "Lunes";
+            break;
+          case 2:
+            res = "Martes";
+            break;
+          case 3:
+            res = "Miércoles";
+            break;
+          case 4:
+            res = "Jueves";
+            break;
+          case 5:
+            res = "Viernes";
+            break;
+          case 6:
+            res = "Sábado";
+            break;
+          case 7:
+            res = "Domingo";
+            break;
+          default:
+            res = "Día no válido";
         }
-        document.getElementById('switchResultado').textContent = res;
-        console.log('Switch día:', dia, res);
+        document.getElementById("switchResultado").textContent = res;
+        console.log("Switch día:", dia, res);
       });
 
-      // Anidación: permiso de conducir
-      document.getElementById('btnConducir').addEventListener('click', () => {
-        const edad = Number(document.getElementById('edadConducir').value);
-        const licencia = document.getElementById('tieneLic').value === 'true';
+      document.getElementById("btnConducir").addEventListener("click", () => {
+        const edad = Number(document.getElementById("edadConducir").value);
+        const licencia = document.getElementById("tieneLic").value === "true";
         let res;
-        if (Number.isNaN(edad)) res = 'Entrada inválida';
+        if (Number.isNaN(edad)) res = "Entrada inválida";
         else if (edad >= 18) {
-          if (licencia) res = 'Puedes conducir';
-          else res = 'Necesitas licencia';
+          if (licencia) res = "Puedes conducir";
+          else res = "Necesitas licencia";
         } else {
-          res = 'Eres menor de edad';
+          res = "Eres menor de edad";
         }
-        document.getElementById('conducirResultado').textContent = res;
-        console.log('Conducir:', edad, licencia, res);
+        document.getElementById("conducirResultado").textContent = res;
+        console.log("Conducir:", edad, licencia, res);
       });
 
-      // Login básico (ejemplo completo)
-      document.getElementById('btnLogin').addEventListener('click', () => {
-        const usuario = document.getElementById('loginUser').value;
-        const clave = document.getElementById('loginPass').value;
+      document.getElementById("btnLogin").addEventListener("click", () => {
+        const usuario = document.getElementById("loginUser").value;
+        const clave = document.getElementById("loginPass").value;
         let res;
-        if (usuario === 'admin' && clave === '1234') {
-          res = 'Acceso concedido';
-        } else if (usuario === 'admin') {
-          res = 'Clave incorrecta';
+        if (usuario === "admin" && clave === "1234") {
+          res = "Acceso concedido";
+        } else if (usuario === "admin") {
+          res = "Clave incorrecta";
         } else {
-          res = 'Usuario no válido';
+          res = "Usuario no válido";
         }
-        document.getElementById('loginResultado').textContent = res;
-        console.log('Login:', usuario, '=>', res);
+        document.getElementById("loginResultado").textContent = res;
+        console.log("Login:", usuario, "=>", res);
       });
     </script>
-</body>
+  </body>
 </html>

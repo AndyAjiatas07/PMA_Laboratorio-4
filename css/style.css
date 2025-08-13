@@ -1,79 +1,71 @@
-/* Fuente general */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9fbfd;
-    color: #222;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fbfd;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header - Hero */
 header {
-    background: linear-gradient(90deg, #007bff, #00aaff);
-    position: relative;
+  background: linear-gradient(90deg, #007bff, #00aaff);
+  position: relative;
 }
 
-/* Efecto hover para tarjetas */
 .tema-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .tema-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
 }
 
-/* Imagenes dentro de tarjetas */
 .tema-img {
-    object-fit: cover;
-    height: 180px;
+  object-fit: cover;
+  height: 180px;
 }
 
-/* Botones con transición */
 .btn-theme {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-theme:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.6);
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.6);
 }
 
-/* Títulos en cards */
 .card-title {
-    color: #007bff;
+  color: #007bff;
 }
 
-/* Código resaltado */
 pre code {
-    background-color: #e9f1fb;
-    padding: 15px;
-    display: block;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: 'Fira Code', monospace, monospace;
-    font-size: 1rem;
-    color: #0a3d62;
-    box-shadow: inset 0 0 10px #c3d8f7;
+  background-color: #e9f1fb;
+  padding: 15px;
+  display: block;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: "Fira Code", monospace, monospace;
+  font-size: 1rem;
+  color: #0a3d62;
+  box-shadow: inset 0 0 10px #c3d8f7;
 }
 
-/* Footer */
 footer {
-    margin-top: auto;
+  margin-top: auto;
 }
 
-/* Scroll suave para enlaces internos */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .card-img-top {
-  width: 100%;       /* Para que ocupe todo el ancho del contenedor */
-  max-width: 500px;  /* O el tamaño que desees */
-  height: auto;      /* Mantener proporción */
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -81,9 +73,9 @@ html, body {
 }
 
 body > main {
-  flex: 1 0 auto; /* Hace que el main crezca y ocupe espacio disponible */
+  flex: 1 0 auto;
 }
 
 footer {
-  flex-shrink: 0; /* Evita que el footer se reduzca */
+  flex-shrink: 0;
 }
