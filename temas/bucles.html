@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Introducción a JavaScript - Bucles</title>
+        <link rel="icon" href="../img/1.png" type="image/x-icon" />
+    <title>Bucles en JavaScript</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <style>
@@ -39,14 +40,14 @@
         <!-- Contenido principal -->
         <main class="col-lg-8">
           <h1 class="mb-4 text-primary fw-bold">Bucles en JavaScript</h1>
+                    <img src="../img/7.png" class="card-img-top" alt="Bucles">
 
           <article class="mb-4 fs-5 lh-lg">
 
 <section class="mb-5 fs-5 lh-lg">
-
-  <p>Los bucles (o loops) en JavaScript son estructuras que permiten repetir un bloque de código de manera controlada, ya sea un número determinado de veces o mientras se cumpla una condición específica.</p>
-
-  <p>Su objetivo principal es automatizar tareas repetitivas y reducir código innecesario. En lugar de copiar y pegar una misma instrucción varias veces, podemos agruparla en un bucle y dejar que se ejecute de forma iterativa.</p>
+<p>
+Los bucles son estructuras que facilitan la repetición automática de un bloque de código múltiples veces, permitiendo que tareas repetitivas se realicen de forma eficiente y sin la necesidad de escribir código redundante. Esta capacidad es fundamental para procesar colecciones de datos o ejecutar acciones hasta que se cumpla una condición específica.
+</p>
 
   <h5 class="mt-4">1. Principios Básicos de un Bucle</h5>
   <ul>
@@ -115,7 +116,7 @@ do {
 for (let propiedad in persona) {
   console.log(`${propiedad}: ${persona[propiedad]}`);
 }</code></pre>
-  <p class="text-warning"><strong>⚠ Advertencia:</strong> No se recomienda usar <code>for...in</code> para recorrer arrays, ya que no garantiza el orden.</p>
+  <p class="text-warning"><strong>Advertencia:</strong> No se recomienda usar <code>for...in</code> para recorrer arrays, ya que no garantiza el orden.</p>
 
   <h6 class="mt-3">2.5. Bucle <code>for...of</code> – Iterar valores de colecciones</h6>
   <p>Se usa para recorrer valores de elementos iterables (arrays, strings, sets, maps).</p>

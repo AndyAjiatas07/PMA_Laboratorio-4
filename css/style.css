@@ -66,3 +66,24 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+.card-img-top {
+  width: 100%;       /* Para que ocupe todo el ancho del contenedor */
+  max-width: 500px;  /* O el tamaño que desees */
+  height: auto;      /* Mantener proporción */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body > main {
+  flex: 1 0 auto; /* Hace que el main crezca y ocupe espacio disponible */
+}
+
+footer {
+  flex-shrink: 0; /* Evita que el footer se reduzca */
+}
